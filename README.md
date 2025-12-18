@@ -16,10 +16,3 @@ This repository contains a single Jupyter notebook (`XGBoost_Main.ipynb`) with t
 - `LICENSE` — MIT License.
 
 ---
-
-## Quick start
-### 1) Create and activate a virtual environment
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Linux/macOS
-# .\.venv\Scripts\Activate.ps1   # Windows (PowerShell)
