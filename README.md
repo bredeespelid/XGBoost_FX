@@ -1,50 +1,25 @@
 # XGBoost_FX
 
-This repository contains code and Jupyter notebooks supporting a master’s thesis on forecasting foreign-exchange (FX) levels—specifically EUR/NOK—using machine learning, with an emphasis on Gradient Boosting (XGBoost) and macro-financial covariates.
+This repository contains a single Jupyter notebook (`XGBoost_Main.ipynb`) with the full set of **XGBoost FX forecasting experiments** used in a master’s thesis. The notebook implements **monthly and quarterly walk-forward evaluation** for **EUR/NOK level forecasting**, including:
+- price-only baselines,
+- macro-financial variants (incl. exogenous extensions),
+- robust benchmark comparisons (e.g., driftless random walk),
+- regime-split performance tables,
+- bootstrap robustness checks.
 
-## Purpose
-- Establish robust benchmark models for **EUR/NOK level forecasting**.
-- Compare XGBoost specifications using lagged FX history, macro covariates, and panel/exogenous feature sets.
-- Provide a fully reproducible workflow for model training, tuning, and evaluation.
+---
 
-## Repository Structure
-- `src/` — Jupyter notebooks (feature engineering, modeling, evaluation).
-- `data/` — Data files used in the thesis (raw and processed).
+## Contents
+- `XGBoost_Main.ipynb` — end-to-end workflow: data handling, feature variants, walk-forward evaluation, comparisons, and robustness runs.
+- `data/` — raw/processed datasets used by the notebook (if applicable).
+- `requirements.txt` — pinned dependencies.
 - `LICENSE` — MIT License.
 
-## Notebooks
-All notebooks are located in `src/`. The list below maps directly to the model families used in the thesis.
+---
 
-### Price-Only Models (PO)
-- **XGBPriceMonthly.ipynb** — XGBoost using FX/price history, monthly frequency.  
-  Link: [`src/XGBPriceMonthly.ipynb`](src/XGBPriceMonthly.ipynb)
-
-- **XGBPriceQuarterly.ipynb** — XGBoost using FX/price history, quarterly frequency.  
-  Link: [`src/XGBPriceQuarterly.ipynb`](src/XGBPriceQuarterly.ipynb)
-
-### Macro-Enriched Models (EN)
-- **XGBMacroMonthly.ipynb** — XGBoost with selected macro-financial covariates, monthly frequency.  
-  Link: [`src/XGBMacroMonthly.ipynb`](src/XGBMacroMonthly.ipynb)
-
-- **XGBMacroQuarterly.ipynb** — XGBoost with selected macro-financial covariates, quarterly frequency.  
-  Link: [`src/XGBMacroQuarterly.ipynb`](src/XGBMacroQuarterly.ipynb)
-
-### Panel / Exogenous-Extended Models (EN-EX)
-- **XGBPanelMonthly.ipynb** — XGBoost with panel/exogenous extensions, monthly frequency.  
-  Link: [`src/XGBPanelMonthly.ipynb`](src/XGBPanelMonthly.ipynb)
-
-- **XGBPanelQuarterly.ipynb** — XGBoost with panel/exogenous extensions, quarterly frequency.  
-  Link: [`src/XGBPanelQuarterly.ipynb`](src/XGBPanelQuarterly.ipynb)
-
-### Variable Importance (LOFO)
-- **XGBoostVariableImportance.ipynb** — LOFO-style variable-importance analysis for covariate selection.  
-  Link: [`src/XGBoostVariableImportance.ipynb`](src/XGBoostVariableImportance.ipynb)
-
-## Status
-Supporting research material for a master’s thesis. The repository is intended for academic and benchmarking use.
-
-## License
-Released under the MIT License. See `LICENSE` for details.
-
-## Citation
-If you use this repository in academic work, please cite the author and the associated thesis appropriately.
+## Quick start
+### 1) Create and activate a virtual environment
+```bash
+python -m venv .venv
+source .venv/bin/activate        # Linux/macOS
+# .\.venv\Scripts\Activate.ps1   # Windows (PowerShell)
